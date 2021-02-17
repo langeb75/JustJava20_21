@@ -28,6 +28,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * This method is called when the Increment/Plus button is clicked.
+     */
+    public void increment(View view) {
+        int quantity = 3;
+        display(quantity);
+    }
+
+    /**
+     * This method is called when the Decrement/Minus button is clicked.
+     */
+    public void decrement(View view) {
+        int quantity = 1;
+        display(quantity);
+    }
+
+    /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {

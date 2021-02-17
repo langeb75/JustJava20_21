@@ -16,7 +16,6 @@
         android:textAllCaps="true"/>
 
     <Button
-        android:id="@+id/"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:text="+"
@@ -32,7 +31,6 @@
         android:text="0" />
 
     <Button
-        android:id="@+id/"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
