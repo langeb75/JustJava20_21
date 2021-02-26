@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="$10" />
+        android:text="$0" />
 
     <Button
         android:id="@+id/order_button"
