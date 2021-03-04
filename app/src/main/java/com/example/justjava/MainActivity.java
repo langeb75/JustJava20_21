@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         // int numberOfCoffees = quantity;
         // display(numberOfCoffees);
         // displayPrice(numberOfCoffees * 5);
-        String priceMessage = "Free";
+        String priceMessage = "Free, did she say, \"FREE!\""; //I used an escape sequence \" to include the quotes around FREE
         displayMessage(priceMessage);
     }
 
