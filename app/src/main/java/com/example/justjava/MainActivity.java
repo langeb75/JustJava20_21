@@ -54,10 +54,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int numberOfCoffees = quantity;
-        // display(numberOfCoffees);
-        // displayPrice(numberOfCoffees * 5);
-        String priceMessage = "Thank you for wanting " + numberOfCoffees + " coffees, your order will be right up!"; //I used an escape sequence \" to include the quotes around FREE
+        int price = quantity * 5;
+        String priceMessage = "Thank you for ordering " + quantity + " Coffees! \nAmount Due: $" + price; //I used the escape key \n to put info on a new line
         displayMessage(priceMessage);
     }
 
