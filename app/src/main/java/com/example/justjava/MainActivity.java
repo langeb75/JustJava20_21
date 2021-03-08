@@ -54,9 +54,10 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int numberOfCoffees = quantity;
-        display(numberOfCoffees);
-        displayPrice(numberOfCoffees * 5);
+        int price = quantity * 5;
+        String priceMessage = "Thank you for ordering " + quantity + " Coffees! \nAmount Due: $" + price; //I used the escape key \n to put info on a new line
+        priceMessage = priceMessage + "\n\nYour order will be right up!"; //Double \n escape key for w line separation
+        displayMessage(priceMessage);
     }
 
     /**
@@ -74,4 +75,13 @@ public class MainActivity extends AppCompatActivity {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
+
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
+    }
+
 }
