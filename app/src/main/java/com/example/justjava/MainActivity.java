@@ -58,15 +58,18 @@ public class MainActivity extends AppCompatActivity {
         String priceMessage = "Thank you for ordering " + quantity + " Coffees! \nAmount Due: $" + price; //I used the escape key \n to put info on a new line
         priceMessage = priceMessage + "\n\nYour order will be right up!"; //Double \n escape key for w line separation
         displayMessage(priceMessage);
+
+        calculatePrice(quantity, 10);
     }
 
     /**
      * Calculates the price of the order.
      *
      * @param quantity is the number of cups of coffee ordered
+     * @param pricePerCup tell us the price per cup of coffee
      */
-    private void calculatePrice(int quantity) {
-        int price = quantity * 5;
+    private void calculatePrice(int quantity, int pricePerCup) {
+        int price = quantity * pricePerCup;
     }
 
     /**
