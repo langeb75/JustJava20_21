@@ -61,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Calculates the price of the order.
+     *
+     * @param quantity is the number of cups of coffee ordered
+     */
+    private void calculatePrice(int quantity) {
+        int price = quantity * 5;
+    }
+
+    /**
      * This method displays the given quantity value on the screen.
      */
     private void displayQuantity(int numberOfCoffees) {
