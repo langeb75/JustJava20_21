@@ -21,7 +21,7 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
-    /**
+    /*
      *Declare Global Variables Here
      */
     int quantity = 0;
@@ -59,17 +59,16 @@ public class MainActivity extends AppCompatActivity {
         priceMessage = priceMessage + "\n\nYour order will be right up!"; //Double \n escape key for w line separation
         displayMessage(priceMessage);
 
-        calculatePrice(quantity, 10);
+        calculatePrice();
     }
 
     /**
      * Calculates the price of the order.
      *
-     * @param quantity is the number of cups of coffee ordered
-     * @param pricePerCup tell us the price per cup of coffee
+     *
      */
-    private void calculatePrice(int quantity, int pricePerCup) {
-        int price = quantity * pricePerCup;
+    private void calculatePrice() {
+        int price = quantity * 5;
     }
 
     /**
