@@ -71,12 +71,13 @@ public class MainActivity extends AppCompatActivity {
         // Figure out if the user wants chocolate topping
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         boolean hasChocolate = chocolateCheckBox.isChecked();
+        Log.v("MainActivity", "Add Chocolate Topping: " + hasChocolate);
 
         // Calculate the price
         int price = calculatePrice();
 
         // Display the order summary on the screen
-        String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate);
+        String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
         displayMessage(priceMessage);
     }
 
@@ -93,13 +94,14 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Create a summary of our order
      *
+     * @param name            of the customer
      * @param price           of the order
      * @param addWhippedCream is whether or not the user wants Whipped Cream Topping
      * @param addChocolate    is whether or not to add chocolate to the coffee
      * @return priceMessage
      */
-    private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate) {
-        String priceMessage = "Name: Mr. Lange";
+    private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
+        String priceMessage = "Name: " + name;
         priceMessage += "\nThank you for ordering " + quantity + " Coffees!";  //I used the escape key \n to put info on a new line
         priceMessage += "\nAdd Whipped Cream? " + addWhippedCream;
         priceMessage += "\nAdd Chocolate? " + addChocolate;
