@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         Log.v("MainActivity", "Add Chocolate Topping: " + hasChocolate);
 
         // Calculate the price
-        int price = calculatePrice();
+        int price = calculatePrice(hasWhippedCream, hasChocolate);
 
         // Display the order summary on the screen
         String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
@@ -84,11 +84,25 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Calculates the price of the order
      *
+     * @param addWhippedCream is whether or not the user wants whipped cream topping
+     * @param addChocolate is whether or not the user wants chocolate topping     *
      * @return total price
      */
-    private int calculatePrice() {
-        int price = quantity * 5;
-        return price;
+    private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
+        int basePrice = 5;
+
+        // Add $1 if the user wants whipped cream
+        if (addWhippedCream){
+            basePrice = basePrice + 1;
+        }
+
+        // Add $2 if the user wants chocolate
+        if (addChocolate) {
+            basePrice = basePrice +2;
+        }
+
+        // Calculate the total order price by multiplying by quantity
+        return quantity * basePrice;
     }
 
     /**
