@@ -9,7 +9,8 @@
 package com.example.justjava;
 
 
-
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +19,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import java.text.NumberFormat;
 
 /**
@@ -78,6 +80,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Display the order summary on the screen
         String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
+
+        // Bring up the email application and send an email to
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java order for " + name);
+        intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
         displayMessage(priceMessage);
     }
 
