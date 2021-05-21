@@ -36,6 +36,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView coffeeAccessories = (TextView) findViewById(R.id.CoffeeAccessory_Button);
+
+        // This is to go to another page via a TextView
+        // If I want another page I can copy and paste this below with updated information
+        coffeeAccessories.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                Intent coffeeAccessoriesPage = new Intent(MainActivity.this, coffeeAccessoriesPage.class);
+                startActivity(coffeeAccessoriesPage);
+            }
+        });
+
     }
 
     /**

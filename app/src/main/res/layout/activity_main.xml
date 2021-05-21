@@ -104,5 +104,15 @@
             android:onClick="submitOrder"
             android:text="Order" />
 
+        <TextView
+            android:id="@+id/CoffeeAccessory_Button"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@color/purple_500"
+            android:textStyle="bold"
+            android:text="Coffee Accessories"/>
+
     </LinearLayout>
 </ScrollView>
